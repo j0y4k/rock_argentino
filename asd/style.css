@@ -1,0 +1,167 @@
+* {
+    list-style: none;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    --s: 83px;
+    --c1: #2e2e2e;
+    --c2: #1c1c1c;
+    --c3: #242424;
+    --_g: var(--c3) 0 120deg,#0000 0;
+    background:
+      conic-gradient(from -60deg at 50% calc(100%/3),var(--_g)),
+      conic-gradient(from 120deg at 50% calc(200%/3),var(--_g)),
+      conic-gradient(from  60deg at calc(200%/3),var(--c3) 60deg,var(--c2) 0 120deg,#0000 0),
+      conic-gradient(from 180deg at calc(100%/3),var(--c1) 60deg,var(--_g)),
+      linear-gradient(90deg,var(--c1) calc(100%/6),var(--c2) 0 50%, var(--c1) 0 calc(500%/6),var(--c2) 0);
+    background-size: calc(1.732*var(--s)) var(--s);
+    font-family: Arial, sans-serif;
+    padding-top: 130px; 
+}
+
+header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+    height: 100px;
+    z-index: 1000;
+    background-color: #121212;
+    transition: background-color 0.4s ease;
+}
+
+.logo { height: 70px; }
+.menu { display: flex; align-items: center; }
+.item {
+    margin: 0 15px;
+    font-size: 18px;
+    font-weight: 600;
+    color: #dddddd;
+    text-decoration: none;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto 60px;
+    background-color: #1d1d1de0;
+    padding: 60px 50px;
+    border-radius: 20px;
+    color: #e0e0e0;
+}
+
+section { margin-bottom: 60px; }
+
+.titulo {
+    font-family: "titulo";
+    color: #fdcedb;
+    font-size: 45px;
+    text-align: center;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 0px #333, 11px 11px 10px #000;
+}
+
+.subtitulo {
+    font-family: "subtitulo";
+    color: #ffdfe7;
+    margin-bottom: 25px;
+}
+
+p { 
+    line-height: 1.7; 
+    margin-bottom: 25px; 
+    max-width: 90%; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lista-items {
+    max-width: 90%;
+    margin: 0 auto;
+}
+
+.lista-items li { margin-bottom: 15px; }
+
+.imag {
+    display: block;
+    max-width: 90%;
+    height: auto;
+    margin: 0 auto 30px auto;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+.imag-footer { max-width: 150px; display: block; margin: 0 auto 20px; }
+.footer-copy { text-align: center; margin-bottom: 20px; }
+
+@font-face { font-family: "titulo"; src: url(fonts/ROMALIKA.otf); }
+@font-face { font-family: "subtitulo"; src: url(fonts/Evil\ Empire.otf); }
+
+/* MOBILE */
+#menu { display: none; }
+.menu-icono { width: 30px; }
+label { cursor: pointer; display: none; }
+
+@media(max-width:768px) {
+    .container { padding: 40px 20px; }
+    label { display: initial; }
+    .menu {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background-color: #1c1c1c;
+        display: none;
+        flex-direction: column;
+        padding: 20px;
+    }
+    #menu:checked ~ .menu { display: flex; }
+}
+
+section, footer { margin-bottom: 70px; }
+
+.titulo { text-align: center; font-size: 45px; margin-bottom: 50px; color: #fdcedb; }
+.subtitulo { margin-bottom: 25px; text-align: center; }
+
+p { line-height: 1.8; margin-bottom: 30px; max-width: 90%; margin: 0 auto 30px; }
+
+.imag { display: block; max-width: 90%; margin: 0 auto 35px; border-radius: 12px; box-shadow: 0 10px 20px rgba(0,0,0,0.5); }
+
+/* DISEÑO DE CONTACTOS ESTILIZADO */
+.social-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.social-link {
+    padding: 12px 25px;
+    border: 1px solid #444;
+    border-radius: 30px;
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.social-link:hover {
+    background: #e6023b;
+    border-color: #e6023b;
+    transform: translateY(-5px);
+}
+
+.footer-info { text-align: center; border-top: 1px solid #333; padding-top: 30px; }
+.imag-footer { max-width: 120px; margin-bottom: 15px; }
+
+/* MOBILE */
+#menu { display: none; }
+@media(max-width:768px) {
+    .container { padding: 40px 20px; }
+    .social-grid { flex-direction: column; align-items: center; }
+}
